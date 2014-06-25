@@ -5,42 +5,50 @@
 	<title><%=@title  ||= "Nomadder" %></title>
 	<link rel="stylesheet" href="/css/reset.css">
 	<link rel="stylesheet" href="/css/sign_in.css">
-
-
-
-
 </head>
 <body>
 
-<div class="existing" style = "border: solid 2px; width: 100%; float: right; background-color: rgb(119,119,127); font-family:Calibri;">
-	<form method="POST" action="/signin">  
+<div id="existing">
+<p id="logo">Nomadder</p>
+	<form id="signin" method="POST" action="/signin">  
 	<label for="username">Username</label>  
-	<input type="text" name="username">  
+	<input type="text" name="[user]username">  
 	<label for="password">Password</label>  
-	<input type="password" name="password">  
+	<input type="password" name="[user]password">  
 	<input type="submit"></form>
 </div>
 <br>
-<br>
-<br>
-<br>
-<p>SIGN UP</p>
-<div class="new" style = "border: solid 2px; width: 40%; background-color: rgb(119,119,127); font-family:Calibri;">
-	<form method="POST" action="/signup">  
-	<label for="fname">First Name</label>  
-	<input type="text" name="fname">  
-	<label for="lame">Last Name</label> 
-	<input type="text" name="lname"> 
-	<label for="email">Email Address</label> 
-	<input type="text" name="email"> 
-<br>
-	<label for="username"> Select Username</label>
-	<input type="text" name="username">
-<br>	
-	<label for="password">New Password</label>
-	<input type="password" name="password">  
-<br>
-	<input type="Submit"></form>
+<div id="wrapper">
+<div id="info">
+	<article>
+	<h2>
+		The social networking site for all your backpacking needs. 
+	</h2>
+	<p>
+		Find other travelers and see what they are saying about each destination.
+	</p>
+	</article>
 </div>
+<div id="new">
+	<h1>SIGN UP</h1>
+	<h2>(it's free)</h2>	
+	<br>
+	<form id="signup" method="POST" action="/signup">  
+	<input type="text" name="[user]fname" placeholder="First Name"> 
+	<input type="text" name="[user]lname" placeholder="Last Name"> 
+<br>
+	<input type="text" name="[user]email" placeholder="Your Email"> 
+<br>
+	<input type="text" name="[user]username" placeholder="User Name">
+<br>	
+	<input type="password" name="[user]password" placeholder="New Password">  
+<br>
+	<input type="Submit" value="Sign Up"></form>
+</div>
+</div>
+<hr>
+	<footer>
+	<p id= "copyright">© Nomadder</p>
+</footer>
 </body>
 </html>
