@@ -1,1 +1,52 @@
-layout.erb
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%=@title  ||= "Nomadder" %></title>
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/main.css">
+	
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+	
+
+
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/script/script.js"></script>
+	
+
+</head>
+<body>
+<!-- on every page -->
+<div id="wrap">
+	<header> 	
+	<nav>
+		<ul>
+			<li><a href="index"></a>Nomadder Logo</li>
+			<li><a href="profile">Profile</a></li>
+			<li><a href="account_setting">Account Settings</a></li>
+			<li><a href="log_out">Log Out</a></li>
+		</ul>
+	</nav>
+	</header>
+	<hr>
+
+	<br>
+	<div id="container">
+	
+	
+    </div>
+	<%= yield %>
+
+	<br><br>
+	<hr>
+	<footer>
+	<p id= "copyright">© Nomadder</p>
+</footer>
+</div>	
+	
+</body>
+</html>
