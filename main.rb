@@ -72,3 +72,7 @@ post '/post' do
   redirect '/logged_in'
 end
 
+get '/profile' do
+  erb :profile
+end
+
