@@ -62,6 +62,7 @@ end
 get '/profile' do
    @title = "Profile Page"
    @posts = current_user.posts.order(date: :desc).limit(10)
+    erb :profile
 end
 
 post '/post' do
@@ -76,7 +77,5 @@ post '/post' do
   redirect '/logged_in'
 end
 
-get '/profile' do
-  erb :profile
-end
+
 

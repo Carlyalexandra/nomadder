@@ -10,7 +10,7 @@
 				This is where user info goes! br
 			</h1> -->
 		</div>
-		
+	<!-- JASON COPY FROM HERE INTO PROFILE	 -->
 		<div id="feed">
 			<h1>
 				Update your status
@@ -30,7 +30,7 @@
 			
 			<ul>
 				
-				<% @postsall.each do |t| %>
+				<% @postsall.each do |t| %> <!-- JASON change this from @postall to @posts -->
 				
 				<li><%= "#{t.date.strftime("%b %d, %l:%M%p")}" %> <br> 
 				<%= "#{t.user.fname} posted #{t.body}" %></li> 
@@ -40,7 +40,7 @@
 			
 			</div>
 		</div>
-
+<!-- JASON STOP COPYING HERE FOR PROFILE -->
 
 		<div id="sidebar_left">
 			<h1>
