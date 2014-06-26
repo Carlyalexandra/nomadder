@@ -53,15 +53,18 @@ end
 
 get '/logged_in' do
   @title = "Welcome to Nomadder"
+  @user = User.find(session[:user_id])
   erb :logged_in
 end
 
 
 
 post '/post' do
+  puts params.inspect
   @post = Post.new(params[:post])
   @post.date = Time.now
-  @post.user_id = session[:user_id]
+  @post.user_id = current_user.id
+  @post.save
   #@user = User.find(session[:user_id])
   #session[:user_id] = @user.id
 

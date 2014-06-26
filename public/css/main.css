@@ -52,15 +52,16 @@ header {
 
 /*this is where the logged_in styling begins*/
 #sidebar_right, #sidebar_left {
-	width: 25%;
+	width: 30%;
 	border: solid;
-	display: inline-block;
+	float: left;
 }
 
 #feed {
-	width: 40%;
+	width: 30%;
 	border: solid;
-	display: inline-block;
+	float: left;
+	
 }
 
 #containerL {
@@ -81,7 +82,9 @@ header {
 
 }
 
-
+hr {
+	clear:both;
+}
 
 
 

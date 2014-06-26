@@ -27,7 +27,7 @@
 	<nav>
 	<ul>
 	<% if current_user %>
-		<li><%= "hello #{current_user.username} "%></li> 
+		<li><%= "hello #{current_user.username} | session_id: #{session[:user_id]}"%></li> 
 		<li><a href="/sign_out">Sign out</a> </li>
 		<li><a href="account_setting">Account Settings</a></li>
 		<li><a href="profile">Profile</a></li>

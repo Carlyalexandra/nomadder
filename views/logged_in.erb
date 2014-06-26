@@ -26,12 +26,17 @@
 				This is where the top 10 posts go!!
 			</h1>
 			<div id="topten">
-				<%= @user.posts.each %>
+				<%= "This user has #{@user.posts.count} posts." %>
+			
+			<ul>
+				<% @user.posts.each do |t| %>
+				
+				<li><%= t.body%></li>
+			<br>
+				<% end %>
+			</ul>
+			
 			</div>
-		</div>
-		
-
-
 		<div id="sidebar_left">
 			<h1>
 				This is where travel tips go.
