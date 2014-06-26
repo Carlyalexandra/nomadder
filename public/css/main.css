@@ -49,3 +49,25 @@ header img {
 header {
 	background-color: orange;
 }
+
+/*this is where the logged_in styling begins*/
+#sidebar_right, #feed, #sidebar_left {
+	float: left;
+	width: 30%;
+	border: solid;
+}
+
+#containerL {
+	width: 100%;
+	margin: auto 0;
+	text-align: center;
+}
+
+#wrapperL {
+float: left;
+width: 100%;
+
+}
+
+
+

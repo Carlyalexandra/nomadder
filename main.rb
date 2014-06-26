@@ -9,7 +9,7 @@ require 'rack-flash'
 enable :sessions
 use Rack::Flash, :sweep => true
 set :sessions => true
-set :database, "sqlite3:nomdder_app.sqlite3"
+configure(:development){set :database, "sqlite3:nomdder_app.sqlite3"}
 
 get '/' do
   @title = "Welcome to Nomadder"
