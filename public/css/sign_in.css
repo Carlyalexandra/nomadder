@@ -1,14 +1,21 @@
 #existing{ 
 	padding: 20px;
-	padding-bottom: 40px;
+	/*padding-bottom: 40px;*/
 	width: 100%; 
 	background-color: orange; 
 	font-family: "Calibri";
+	border-bottom: solid 2px;
+	position: fixed;
+	height: 20px;
 
 }
 
 #logo {
 	float: left;
+	font-family: 'Fredoka One';
+	font-size: 34px;
+	margin-top: -5px;
+	margin-left: 30px;
 
 }
 
@@ -19,29 +26,45 @@
 }
 
 #new {
-	margin-left: 200px;
+	margin-left: 140px;
 	width: 40%; 
 	float: right;
 	font-family:"Calibri";
+	margin-top: 70px;
 
 
 }
 
+#container {
+	width: 100%;
+	margin-top: 10px;
+height: 100%;
+background: linear-gradient(white, rgb(0,131,145))
+
+}
+
 #wrapper {
-	margin-top: -10px;
-	float: left;
+	
+	
 	height: 500px;
 	background: url(/images/cover.jpg);
-	
-
+	background-size: 100%;
+	border-top: solid 2px;
+	border-bottom: solid 2px;
+	width: 900px;
+	margin-left: 100px;
+	padding: 20px;
+	margin-top: 40px;
 }
 
 #info {
 	float: left;
 	color: white;
 	width: 40%;
-	margin-left: 40px;
-
+	margin-left: 50px;
+	padding-left: 40px;
+	margin-top: 100px;
+	width: 30%;
 }
 
 
@@ -60,4 +83,12 @@ h1 {
 h2 {
 	font-size: 18px;
 	color: white;
+}
+
+footer {
+	font-family: 'Fredoka One',;
+	font-size: 13px;
+	margin-top: 20px;
+	margin-left: 100px;
+	margin-bottom: 20px;
 }

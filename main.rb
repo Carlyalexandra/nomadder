@@ -27,6 +27,7 @@ post '/signin' do
   @user = User.where(params[:user])
   if @user.empty?
     flash[:alert] = "Sorry, that user doesn't exist. Feel free to sign up."
+    # session[:user_id] = @user.first.id
     redirect '/'
   else
     flash[:notice] = "You've successfully signed in."
