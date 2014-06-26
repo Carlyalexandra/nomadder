@@ -11,6 +11,17 @@ use Rack::Flash, :sweep => true
 set :sessions => true
 configure(:development){set :database, "sqlite3:nomdder_app.sqlite3"}
 
+helpers do
+  def current_user
+    session[:user_id].nil? ? nil : User.find(session[:user_id])
+  end
+end
+
+#inside of your view
+# =current_user
+# =display_one
+
+
 get '/' do
   @title = "Welcome to Nomadder"
   erb :sign_in, :layout => false
@@ -24,13 +35,13 @@ post '/signup' do
 end
 
 post '/signin' do
-  @user = User.where(params[:user])
-  if @user.empty?
+  @user = User.where(params[:user]).first
+  if !@user
     flash[:alert] = "Sorry, that user doesn't exist. Feel free to sign up."
-    # session[:user_id] = @user.first.id
     redirect '/'
   else
     flash[:notice] = "You've successfully signed in."
+    session[:user_id] = @user.id
     redirect '/logged_in'
   end
 end
@@ -43,5 +54,17 @@ end
 get '/logged_in' do
   @title = "Welcome to Nomadder"
   erb :logged_in
+end
+
+
+
+post '/post' do
+  @post = Post.new(params[:post])
+  @post.date = Time.now
+  @post.user_id = session[:user_id]
+  #@user = User.find(session[:user_id])
+  #session[:user_id] = @user.id
+
+  redirect '/logged_in'
 end
 

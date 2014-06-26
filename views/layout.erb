@@ -25,12 +25,17 @@
 	<header> 
 	<a class="logo" href="logged_in">N</a>	
 	<nav>
-		<ul>
-			<!-- <li><a href="logged_in"><img src="/images/logo.jpg" alt=""></a></li> -->
-			<li><a href="profile">Profile</a></li>
-			<li><a href="account_setting">Account Settings</a></li>
-			<li><a href="sign_out">Log Out</a></li>
-		</ul>
+	<ul>
+	<% if current_user %>
+		<li><%= "hello #{current_user.username} "%></li> 
+		<li><a href="/sign_out">Sign out</a> </li>
+		<li><a href="account_setting">Account Settings</a></li>
+		<li><a href="profile">Profile</a></li>
+	<% else %>
+		<li><a href="/signup">Sign up</a></li>
+		<li> <a href="/signin">Sign in</a></li>
+	<% end %>
+	</ul>
 	</nav>
 	</header>
 

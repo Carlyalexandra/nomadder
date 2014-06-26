@@ -26,6 +26,7 @@ GEM
     i18n (0.6.9)
     json (1.8.1)
     minitest (5.3.5)
+    pg (0.17.1)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -48,6 +49,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  pg
   rack-flash3!
   rake
   sinatra-activerecord
