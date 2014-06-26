@@ -1,16 +1,16 @@
 <div id="containerL">
+	
+
+
 	<div id="wrapperL">
 		
 
 		<div id="sidebar_right">
-			<h1>
+			<!-- <h1>
 				This is where user info goes! br
-			</h1>
+			</h1> -->
 		</div>
 		
-
-
-
 		<div id="feed">
 			<h1>
 				Update your status
@@ -29,22 +29,27 @@
 				<%= "This user has #{@user.posts.count} posts." %>
 			
 			<ul>
-				<% @user.posts.each do |t| %>
 				
-				<li><%= t.body%></li>
+				<% @posts.each do |t| %>
+				
+				<li><%= "#{t.date.strftime("%b %d, %l:%M%p")}" %> <br> 
+				<%= "#{t.body}" %></li> 
 			<br>
 				<% end %>
 			</ul>
 			
 			</div>
+		</div>
+
+
 		<div id="sidebar_left">
 			<h1>
 				This is where travel tips go.
 			</h1>
 		</div>
-	
-
-
-
 	</div>
+
+
+
+	
 </div>

@@ -54,6 +54,7 @@ end
 get '/logged_in' do
   @title = "Welcome to Nomadder"
   @user = User.find(session[:user_id])
+  @posts = User.last.posts.order(date: :desc).limit(10)
   erb :logged_in
 end
 
@@ -62,7 +63,7 @@ end
 post '/post' do
   puts params.inspect
   @post = Post.new(params[:post])
-  @post.date = Time.now
+  @post.date = DateTime.now
   @post.user_id = current_user.id
   @post.save
   #@user = User.find(session[:user_id])

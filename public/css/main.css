@@ -51,27 +51,25 @@ header {
 }
 
 /*this is where the logged_in styling begins*/
-#sidebar_right, #sidebar_left {
-	width: 30%;
+/*#sidebar_right, #sidebar_left, */#feed {
+	width: 60%;
 	border: solid;
 	float: left;
+	padding-right: 20px;
+
 }
 
-#feed {
-	width: 30%;
-	border: solid;
-	float: left;
-	
-}
 
 #containerL {
-	width: 100%;	
-	text-align: center;
+	width: 80%;	
+	margin: auto;
 }
 
 #wrapperL {
-
-/*width: 100%;*/
+	margin: auto 0,;
+	text-align: center;
+	border: solid;
+	height: 500px;
 
 }
 
@@ -86,5 +84,9 @@ hr {
 	clear:both;
 }
 
+#topten li {
+	color: green;
+	font-size: 12px;
+}
 
 
