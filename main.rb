@@ -54,11 +54,15 @@ end
 get '/logged_in' do
   @title = "Welcome to Nomadder"
   @user = User.find(session[:user_id])
-  @posts = User.last.posts.order(date: :desc).limit(10)
+  @postsall = Post.all.order(date: :desc).limit(10)
   erb :logged_in
 end
 
 
+get '/profile' do
+   @title = "Profile Page"
+   @posts = current_user.posts.order(date: :desc).limit(10)
+end
 
 post '/post' do
   puts params.inspect

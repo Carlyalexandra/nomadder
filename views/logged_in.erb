@@ -26,14 +26,14 @@
 				This is where the top 10 posts go!!
 			</h1>
 			<div id="topten">
-				<%= "This user has #{@user.posts.count} posts." %>
+			<!-- 	<%= "This user has #{@user.posts.count} posts." %> -->
 			
 			<ul>
 				
-				<% @posts.each do |t| %>
+				<% @postsall.each do |t| %>
 				
 				<li><%= "#{t.date.strftime("%b %d, %l:%M%p")}" %> <br> 
-				<%= "#{t.body}" %></li> 
+				<%= "#{t.user.fname} posted #{t.body}" %></li> 
 			<br>
 				<% end %>
 			</ul>
