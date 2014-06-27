@@ -86,12 +86,21 @@ get '/logged_in' do
   erb :logged_in
 end
 
+get '/follow/:id' do
+    @relationships = Relationship.new(follower_id: current_user.id, followed_id: params[:id])
+    if @relationships.save
+      flash[:notice] = "You've successfully followed #{User.find(params[:id]).fname}."
+    else
+      flash[:alert] = "There was an error following that user."
+    end
+    redirect back
+end
 
 get '/profile' do
    @title = "Profile Page"
    @user = User.find(session[:user_id]) if session[:user_id]
    @posts = current_user.posts.order(date: :desc).limit(10)
-    erb :profile
+   erb :profile
 end
 
 post '/post' do
@@ -111,4 +120,8 @@ get '/account_setting' do
   erb :account_settings
 end
 
-
+get '/users/:id' do
+  @user = User.find(params[:id])
+  @posts = @user.posts
+  erb :profile
+end

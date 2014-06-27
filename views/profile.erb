@@ -1,26 +1,49 @@
-<div id="container" style="width:1300px; height:450px; border:1px solid; text-align: center;">
+<div id="container" style="width:1300px; border:1px solid; text-align: center;">
 
 <div id="photo" style="float: left;">
 
-<img src="images/personalphoto.jpg" alt="some text."width="200" height="125">
+<img src="images/personalphoto.jpg" alt="Personal Photo"width="200" height="200">
 
 </div>
 	
-	<body> 
+<div id="feed" style="width: 670px;">
+		<h1>
+			Update your status
+		</h1>
+		<br>
+		<form id="postmain" method="POST" action="/post">   
+		<input id="body" type="text" name="[post]body" placeholder="150 characters max" style="text-align: center;">
+		<input type="submit">	
+		</form>
+		<br>
+		<br>
+		<h1>
+			This is where the top 10 posts go!!
+		</h1>
+		<div id="topten">
+	
+		
+		<ul>
+			
+			<% @posts.each do |t| %>
+			
+			<li><%= "#{t.date.strftime("%b %d, %l:%M%p")}" %> <br> 
+			<%= "#{t.user.fname} posted #{t.body}" %></li> 
+		<br>
+			<% end %>
+		</ul>
+		
+		</div>
+		</div>
 
-	Posts
+	<div id="rightbox" style="width:400px; height:450px; background-color:orange; float:right; border:1px solid;">
 
-	<div id="rightbox" style="
-	width:400px; 
-	height:450px; 
-	background-color: orange;	
-	float:right;
-	border:1px solid;">
+		<%= "<a href='/follow/#{@user.id}'>" %>Click here to follow</a>
+
 	</div>
 
 </div>
 
 
-</body>
 
 	
