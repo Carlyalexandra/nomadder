@@ -1,8 +1,76 @@
-<!--  t.string "fname"
-    t.string "lname"
-    t.string "email"
-    t.string "username"
-    t.string "password"
-    t.string "photo" -->
+<div id="containerA">
+	
 
-    
+
+	<div id="wrapperA">
+		<br>
+		<article>
+			Update your account information below:
+		</article>
+		<br>
+		<br>
+			<div id="photo">
+				<p>Edit current photo:</p>
+				<img src="<%= @user.photo %>" alt="">
+				<form id="signup" method="POST" action="user/photo"> 
+				<input type="text" name="[user]photo" placeholder="Insert Photo url">
+				<input type="Submit" value="change"></form>
+			</div>
+		<div id="changesA">
+
+				<!--  "Your first name is #{@user.fname.capitalize}" %> -->
+				<!-- <form id="signup" method="POST" action="/change_fname">  
+				<input type="text" name="fname" placeholder=" New First Name"> 
+				<input type="Submit" value="change"></form>
+			<br>
+				<%= "Your last name is #{@user.lname.capitalize}" %>
+				<form id="signup" method="POST" action="/change_lname"> 
+				<input type="text" name="lname" placeholder="New Last Name">
+				<input type="Submit" value="change"></form>
+			<br>
+				<%= "Your current email is #{@user.email}" %>
+				<form id="signup" method="POST" action="/change_email"> 
+				<input type="text" name="email" placeholder="New Email">
+				<input type="Submit" value="change"></form> 
+			<br>
+				<%= "Your current username is #{@user.username}" %>
+				<form id="signup" method="POST" action="/username"> 
+				<input type="text" name="username" placeholder="New Username">
+				<input type="Submit" value="change"></form>
+			<br>
+				<%= "Your current password is hidden for your security" %>	
+				<form id="signup" method="POST" action="/change_password"> 
+				<input type="password" name="password" placeholder="New Password">
+				<input type="Submit" value="change"></form>  
+			<br>
+				<p>Edit current photo:</p>
+				<img src="<%= @user.photo %>" alt="">
+				<form id="signup" method="POST" action="/photo"> 
+				<input name="photo" placeholder="Insert Photo url">
+				<input type="Submit" value="change"></form> -->
+
+		
+			<form method="POST" action="user/update"> 
+				<p>Enter new name to change:</p>
+				<input type="text" name="[user]fname" value=<%="#{@user.fname}"%>> 
+			<br>
+				<p>Enter new name to change:</p>
+				<input type="text" name="[user]lname" value=<%="#{@user.lname}"%>>
+			<br>
+				<p>Enter new email to change:</p>
+				<input type="text" name="[user]email" value=<%="#{@user.email}"%>>
+			<br>
+				<p>Enter new username to change:</p>
+				<input type="text" name="[user]username" value=<%="#{@user.username}"%>>
+			<br>
+				<p>Enter new password to change:</p>
+				<input type="password" name="password" placeholder="New Password">
+			<br>
+				<!-- <p>Edit current photo:</p>
+				<input name="[user]photo" value=<%="#{@user.photo}"%>><br />
+				<img src="<%= @user.photo %>" alt=""><br /> -->
+			<input style="margin-top: 10px" type="Submit" value="change"></form>
+		</div>
+	</div>
+</div>
+
