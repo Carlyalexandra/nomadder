@@ -1,4 +1,7 @@
 /*This is the navigation CSS*/
+body {
+	font-family: 'Calibri';
+}
 
 .logo {
 	font-family:'Fredoka One';
@@ -12,7 +15,9 @@
 }
 
 nav {
-	height: 50px;
+	height: 60px;
+	font-family: 'Calibri';
+	font-size: 16px;
 }
 
 nav li{
@@ -40,11 +45,17 @@ nav a:active {
 	color: rgb(0,131,145);
 }
 
-header img {
+nav img {
+	width: 25px;
+	height: 25px;
+	padding-right: 0px;
+}
+
+/*header img {
 	margin-left: 50px;
 	margin-top: 20px;
 	border-radius: 20px;
-}
+}*/
 
 header {
 	background-color: orange;
@@ -55,33 +66,53 @@ header {
 	width: 45%;
 	float: left;
 	padding-right: 20px;
-	border: solid;
 	background-color: white;
 
 }
 
+#sidebar_right {
+	font-family: 'Calibri';
+	text-align: center;
+}
+
+#sidebar_right img {
+	width: 200px;
+	height: auto;
+}
+#feed {
+	border-right: solid 2px; 
+	margin-bottom: 10px;
+}
 
 #containerL {
 	width: 100%;	
 	margin: auto;
-	background-color: rgb(0,131,145);
+	background-image: url(/images/alone.jpg);
+	background-size: 100%;
 }
 
 #wrapperL {
 	margin: 0 auto;
-	height: 1000px;
-	border:solid;
+	overflow: auto;
+	border-right-left: solid 1px; 
 	width: 65%;
 	background-color: white;
+	border: solid;
+	border-radius: 10px;
+
 
 }
 
-
+#postmain {
+	text-align: center;
+	margin-top: 15px;
+}
 
 #postmain #body{
-	height: 20px;
+	height: 40px;
 	width: 300px;
 	border-radius: 10px;
+	margin: 0 auto;
 
 }
 
@@ -91,15 +122,20 @@ hr {
 
 #topten li {
 	color: black;
-	font-size: 13px;
+	font-size: 15px;
+	font-family:'Calibri';
 	width: 70%;
 	margin: 0 auto;
-	border: solid 1px;
-	padding: 5px;
+	border-bottom: solid 1px;
+	padding: 10px;
+	/*border-radius: 10px;*/
 }
 
 h1{
 	padding-bottom: 10px;
+	font-family:'Calibri';
+	font-size: 24px;
+	font-weight: 550;
 }
 /*this is where the main styling is*/
 html {
@@ -109,9 +145,53 @@ html {
 footer {
 	font-family: 'Fredoka One',;
 	font-size: 13px;
+	margin-left: 200px;
+}
+
+/*this is where the accounts setting starts*/
+
+#wrapperA {
+	margin: 0 auto;
+	overflow: auto;
+	width: 65%;
+	background-color: white;
+	border: solid 1px;
+	height: 600px;
+}
+
+#changesA {
+	margin-left: 50px;
+	width: 60%;
+	font-family: 'Calibri';
+	float: left;
+	padding-bottom: 20px;
+}
+
+#changesA input {
+	height: 20px;
+	border-radius: 5px;
+	width: 200px;
 }
 
 
+article {
+	font-family: 'Calibri';
+	margin-left: 15px;
+	font-size: 16px;
+	margin-top: 15px;
+}
 
+#photo {
+	width: 25%;
+	float: left;
+	margin-left: 15px;
+}
 
+#photo img {
+	width: 180px;
+}
+
+#containerA {
+	background-image: url(/images/60.jpg);
+}
 

@@ -17,39 +17,6 @@ helpers do
   end
 end
 
-
-
-class UsersController 
-  def following
-    @title = "Following"
-    @user = User.find(params[:id])
-    @users = @user.following.paginate(:page => params[:page])
-    render 'show_follow'
-  end
-
-  def followers
-    @title = "Followers"
-    @user = User.find(params[:id])
-    @users = @user.followers.paginate(:page => params[:page])
-    render 'show_follow'
-  end
-end
-
-class RelationshipsController 
-  def create
-    @user = User.find(params[:relationship][:followed_id])
-    current_user.follow!(@user)
-    redirect_to @user
-  end
-
-  def destroy
-    @user = Relationship.find(params[:id]).followed
-    current_user.unfollow!(@user)
-    redirect_to @user
-  end
-end
-
-
 get '/' do
   @title = "Welcome to Nomadder"
   erb :sign_in, :layout => false
@@ -117,6 +84,7 @@ end
 
 get '/account_setting' do
   @title = "Account Settings"
+  @user = User.find(session[:user_id]) if session[:user_id]
   erb :account_settings
 end
 
@@ -124,4 +92,23 @@ get '/users/:id' do
   @user = User.find(params[:id])
   @posts = @user.posts
   erb :profile
+end
+
+post '/user/update' do
+  @user = User.find(session[:user_id]) if session[:user_id]
+  @user.update(params[:user])
+  flash[:notice] = 'Account updated'
+  redirect '/account_setting'
+end
+
+post '/user/photo' do
+  @user = User.find(session[:user_id]) if session[:user_id]
+  @user.update(params[:user])
+  flash[:notice] = 'Account updated'
+  redirect '/account_setting'
+end
+
+post '/change_fname' do
+  current_user.update_attributes(fname: params[:fname])
+  redirect '/account_setting'
 end
