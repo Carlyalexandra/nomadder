@@ -17,9 +17,37 @@ helpers do
   end
 end
 
-#inside of your view
-# =current_user
-# =display_one
+
+
+class UsersController 
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.following.paginate(:page => params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(:page => params[:page])
+    render 'show_follow'
+  end
+end
+
+class RelationshipsController 
+  def create
+    @user = User.find(params[:relationship][:followed_id])
+    current_user.follow!(@user)
+    redirect_to @user
+  end
+
+  def destroy
+    @user = Relationship.find(params[:id]).followed
+    current_user.unfollow!(@user)
+    redirect_to @user
+  end
+end
 
 
 get '/' do
@@ -53,7 +81,7 @@ end
 
 get '/logged_in' do
   @title = "Welcome to Nomadder"
-  @user = User.find(session[:user_id])
+  @user = User.find(session[:user_id]) if session[:user_id]
   @postsall = Post.all.order(date: :desc).limit(10)
   erb :logged_in
 end
@@ -61,6 +89,7 @@ end
 
 get '/profile' do
    @title = "Profile Page"
+   @user = User.find(session[:user_id]) if session[:user_id]
    @posts = current_user.posts.order(date: :desc).limit(10)
     erb :profile
 end
@@ -77,5 +106,9 @@ post '/post' do
   redirect '/logged_in'
 end
 
+get '/account_setting' do
+  @title = "Account Settings"
+  erb :account_settings
+end
 
 

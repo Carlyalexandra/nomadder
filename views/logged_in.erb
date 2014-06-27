@@ -5,17 +5,14 @@
 	<div id="wrapperL">
 		
 
-		<div id="sidebar_right">
-			<!-- <h1>
-				This is where user info goes! br
-			</h1> -->
-		</div>
-	<!-- JASON COPY FROM HERE INTO PROFILE	 -->
-		<div id="feed">
+	<!-- 	<div id="sidebar_left">
 			<h1>
-				Update your status
+				This is where user info goes! br
 			</h1>
-			<br>
+		</div> -->
+	
+		<div id="feed">
+		
 			<form id="postmain" method="POST" action="/post">   
 			<input id="body" type="text" name="[post]body" placeholder="150 characters max" style="text-align: center;">
 			<input type="submit">	
@@ -23,26 +20,26 @@
 			<br>
 			<br>
 			<h1>
-				This is where the top 10 posts go!!
+				<!-- This is where the top 10 posts go!! -->
 			</h1>
 			<div id="topten">
-			<!-- 	<%= "This user has #{@user.posts.count} posts." %> -->
+			<%= "This user has #{@user.posts.count} posts." if @user %>
 			
 			<ul>
 				
 				<% @postsall.each do |t| %> <!-- JASON change this from @postall to @posts -->
 				
-				<li><%= "#{t.date.strftime("%b %d, %l:%M%p")}" %> <br> 
-				<%= "#{t.user.fname} posted #{t.body}" %></li> 
+				<li><u><%= "#{t.date.strftime("%b %d, %l:%M%p")}" %></u><br> 
+				<%= "#{t.user.fname} posted: #{t.body}" %></li> 
 			<br>
 				<% end %>
 			</ul>
 			
 			</div>
 		</div>
-<!-- JASON STOP COPYING HERE FOR PROFILE -->
 
-		<div id="sidebar_left">
+
+		<div id="sidebar_right">
 			<h1>
 				This is where travel tips go.
 			</h1>
