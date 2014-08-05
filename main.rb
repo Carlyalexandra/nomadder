@@ -4,7 +4,12 @@ require './models'
 
 require 'bundler/setup'
 require 'sinatra/base'
-require 'rack-flash' 
+require 'rack-flash'
+require 'sinatra/asset_pipeline'
+
+class MyApp < Sinatra::Base
+  register Sinatra::AssetPipeline
+end 
 
 enable :sessions
 use Rack::Flash, :sweep => true
