@@ -7,6 +7,8 @@ require 'sinatra/base'
 require 'rack-flash'
 require 'sinatra/asset_pipeline'
 
+require './config/environments'
+
 class MyApp < Sinatra::Base
   register Sinatra::AssetPipeline
 end 
