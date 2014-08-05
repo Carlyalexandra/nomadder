@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- saved from url=(0020)http://0.0.0.0:3000/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Insite</title>
+  <link data-turbolinks-track="true" href="http://0.0.0.0:3000/assets/application.css?body=1" media="all" rel="stylesheet">
+  <script data-turbolinks-track="true" src="./Insite_files/jquery.js"></script>
+<script data-turbolinks-track="true" src="./Insite_files/jquery_ujs.js"></script>
+<script data-turbolinks-track="true" src="./Insite_files/turbolinks.js"></script>
+<script data-turbolinks-track="true" src="./Insite_files/comments.js"></script>
+<script data-turbolinks-track="true" src="./Insite_files/posts.js"></script>
+<script data-turbolinks-track="true" src="./Insite_files/sessions.js"></script>
+<script data-turbolinks-track="true" src="./Insite_files/users.js"></script>
+<script data-turbolinks-track="true" src="./Insite_files/application.js"></script>
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="6Fwjv3sLgq2ttTY1IDl8BRmExpCSfqVW6MxLzEfzXJM=" name="csrf-token">
+   <link href="./Insite_files/css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="container">
+
+	<nav>
+	<h1 id="logo">InSite...</h1>
+		<p>Welcome barry  |  <a data-method="delete" href="http://0.0.0.0:3000/logout" rel="nofollow">Log Out</a></p>
+	</nav>
+
+
+	
+	
+
+<div id="containerl">
+
+<div id="newuser">
+<h1>New User</h1>
+<form accept-charset="UTF-8" action="http://0.0.0.0:3000/users" class="new_user" id="new_user" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="6Fwjv3sLgq2ttTY1IDl8BRmExpCSfqVW6MxLzEfzXJM="></div>
+	<label for="user_username">Username</label>
+	<input id="user_username" name="user[username]" type="text"> <br>
+	<label for="user_password">Password</label>
+	<input id="user_passwork" name="user[passwork]" type="password">
+	<input name="commit" type="submit" value="create">
+
+
+</form><br>
+<p>Already a memeber? <a class="log-in">Log in.</a></p>
+</div>
+
+<div id="login">
+<h1>Log In</h1>
+<form accept-charset="UTF-8" action="http://0.0.0.0:3000/sessions" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="6Fwjv3sLgq2ttTY1IDl8BRmExpCSfqVW6MxLzEfzXJM="></div>
+	<label for="username">Username:</label>
+	<input id="username" name="username" type="text"> <br>
+	<label for="password">Password:</label> 
+	<input id="passwork" name="passwork" type="password"> <br>
+	<input name="commit" type="submit" value="Login">
+
+	
+</form><br>
+<p>Need an account? <a class="sign-up">Sign up here.</a></p>
+</div>
+</div>
+
+
+
+	</div>
+
+
+
+</body></html>

@@ -29,7 +29,7 @@
 			<% @posts.each do |t| %>
 			
 			<li><%= "#{t.date.strftime("%b %d, %l:%M%p")}" %> <br> 
-			<%= "#{t.user.fname} posted #{t.body}" %></li> 
+			<%= "#{t.user.fname} posted: #{t.body}" %></li> 
 		<br>
 			<% end %>
 		</ul>
